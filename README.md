@@ -622,6 +622,42 @@ Resources
 2. https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
 3. https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
 
+Reviewer Comments
+-----------------
+
+1. There are some packages to be updated.
+
+Action taken: Ran the following to update packages
+
+   $ sudo apt-get update
+   $ sudo apt-get dist-upgared
 
 
+**Below is a screen shot after upgrade (no packages pending upgrade)**
+
+Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-1083-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+New release '18.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue May 28 10:13:18 2019 from 77.69.252.196
+
+
+2. Looks like your SSH is configured to only prohibit log in as root with passwords, with the option 'prohibit-password'.
+The safer option would be 'no'.
+
+
+Action taken: Corrected the missed value from 'prohibit-password to 'no'
+due to multiple AWS instances I have created during the project to reach for a final working one I must have had missed this value change.
 
